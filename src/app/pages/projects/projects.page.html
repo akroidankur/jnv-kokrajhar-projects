@@ -1,0 +1,121 @@
+<ion-toolbar color="transparent"></ion-toolbar>
+
+<ion-content fullscreen class="ion-padding">
+
+  <div class="search-wrapper">
+    <ion-searchbar
+      [(ngModel)]="searchTerm"
+      (ionInput)="filterProjects()"
+      placeholder="Search projects, subjects or keywords..."
+      debounce="200">
+    </ion-searchbar>
+  </div>
+
+  <ion-accordion-group [value]="openAccordions" multiple="true">
+    @for (project of filteredProjects; track project.id) {
+    <ion-accordion value="{{project.id}}">
+
+      <ion-item slot="header">
+        <ion-label>
+          <h2>{{ project.title }}</h2>
+          <p>{{ project.classLevel }} • {{ project.category }}</p>
+        </ion-label>
+      </ion-item>
+
+      <div slot="content" class="ion-padding">
+
+        <ion-label color="primary"><strong>Project Overview</strong></ion-label>
+        <p class="ion-margin-bottom">{{ project.overview }}</p>
+
+        <ion-label color="primary"><strong>How It Works</strong></ion-label>
+        <p class="ion-margin-bottom" style="white-space: pre-line;">{{ project.howItWorks }}</p>
+
+        @if (project.hardware?.length) {
+        <ion-label color="primary"><strong>Hardware Specifications</strong></ion-label>
+        <ion-list lines="none">
+          @for (item of project.hardware; track item) {
+          <ion-item>
+            <ion-icon name="hardware-chip-outline" slot="start" color="medium"></ion-icon>
+            <ion-label>{{ item }}</ion-label>
+          </ion-item>
+          }
+        </ion-list>
+        }
+
+        @if (project.techStack?.length) {
+        <ion-label color="primary" class="ion-margin-top"><strong>Tech Stack</strong></ion-label>
+        <div class="tech-chips">
+          @for (tech of project.techStack; track tech) {
+          <ion-chip color="primary">{{ tech }}</ion-chip>
+          }
+        </div>
+        }
+
+<!-- TEAM MEMBERS -->
+<ion-label color="primary"><strong>Team Members</strong></ion-label>
+<ion-grid>
+  <ion-row>
+    @for (student of project.students; track student.name) {
+    <ion-col size="6" size-md="4" class="ion-text-center member-col">
+      <ion-avatar class="member-avatar">
+        @if (student.photo) {
+          <img
+            [src]="'assets/' + student.photo"
+            [alt]="student.name"
+            (error)="$any($event.target).style.display = 'none'">
+        }
+      </ion-avatar>
+      <div class="member-name">{{ student.name }}</div>
+      <div class="member-role">{{ student.role }}</div>
+    </ion-col>
+    }
+  </ion-row>
+</ion-grid>
+
+<!-- MENTORS -->
+<ion-label color="primary" class="ion-margin-top"><strong>Mentors</strong></ion-label>
+<ion-grid>
+  <ion-row>
+    @for (mentor of project.mentors; track mentor.name) {
+    <ion-col size="6" size-md="4" class="ion-text-center member-col">
+      <ion-avatar class="mentor-avatar">
+        @if (mentor.photo) {
+          <img
+            [src]="'assets/' + mentor.photo"
+            [alt]="mentor.name"
+            (error)="$any($event.target).style.display = 'none'">
+        }
+      </ion-avatar>
+      <div class="member-name">{{ mentor.name }}</div>
+      <div class="member-role">{{ mentor.role }}</div>
+    </ion-col>
+    }
+  </ion-row>
+</ion-grid>
+
+        <div class="showcase-section">
+          @if (project.url) {
+          <ion-button expand="block" color="primary" [href]="project.url" target="_blank" rel="noopener">
+            <ion-icon name="link-outline" slot="start"></ion-icon>
+            View Live Showcase / Demo
+          </ion-button>
+          } @else {
+          <ion-chip color="medium" disabled>
+            <ion-icon name="time-outline"></ion-icon>
+            Showcase Coming Soon
+          </ion-chip>
+          }
+        </div>
+
+        <div class="badges-footer">
+          @for (badge of project.badges; track badge) {
+          <ion-badge color="success"># {{ badge }}</ion-badge>
+          }
+        </div>
+
+      </div>
+    </ion-accordion>
+    }
+  </ion-accordion-group>
+
+</ion-content>

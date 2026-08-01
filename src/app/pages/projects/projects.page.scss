@@ -1,0 +1,76 @@
+/* Searchbar spacing */
+.search-wrapper {
+  margin-top: 35px;
+  margin-bottom: 8px;
+}
+
+/* Accordion header - theme friendly */
+ion-accordion ion-item[slot="header"] {
+  border-radius: 18px;
+  margin: 12px 0 8px;
+  --padding-start: 16px;
+  --padding-end: 16px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+/* Keep the matte black only in dark theme */
+body.dark ion-accordion ion-item[slot="header"],
+.ion-palette-dark ion-accordion ion-item[slot="header"] {
+  --background: rgba(28, 28, 30, 0.95);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+}
+
+/* Team / Mentor layout */
+.member-col {
+  margin-bottom: 18px;
+}
+
+.member-avatar {
+  width: 68px;
+  height: 68px;
+  margin: 0 auto 8px;
+}
+
+.mentor-avatar {
+  width: 58px;
+  height: 58px;
+  margin: 0 auto 8px;
+}
+
+.member-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 3px;
+  color: var(--ion-text-color);
+}
+
+.member-role {
+  font-size: 0.78rem;
+  line-height: 1.35;
+  color: var(--ion-color-medium);
+}
+
+/* Tech chips */
+.tech-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 12px 0 16px;
+}
+
+/* Showcase + badges */
+.showcase-section {
+  margin: 22px 0 10px;
+}
+
+.badges-footer {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+
+ion-content {
+  --padding-top: 4px;
+}

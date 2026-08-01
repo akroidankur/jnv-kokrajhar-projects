@@ -1,0 +1,18 @@
+{
+  "name": "PrintDale One",
+  "integrations": {
+    "capacitor": {
+      "plugins": {
+        "SplashScreen": {
+          "launchShowDuration": 2000,
+          "launchAutoHide": true,
+          "showSpinner": false,
+          "androidSplashResourceName": "splash",
+          "splashFullScreen": true,
+          "splashImmersive": true
+        }
+      }
+    }
+  },
+  "type": "angular-standalone"
+}

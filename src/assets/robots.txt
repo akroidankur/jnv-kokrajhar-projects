@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://sdis-eco-club.vercel.app/sitemap.xml

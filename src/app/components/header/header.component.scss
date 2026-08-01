@@ -1,0 +1,15 @@
+ion-img {
+  // width: 210px;
+  // height: auto;
+  // max-height: 40px;
+  // padding: 0 2%;
+
+  width: 60px;
+}
+
+.skeleton-logo {
+  width: 210px; /* Matches ion-img width */
+  height: 40px; /* Matches ion-img max-height */
+  padding: 0 2%; /* Matches ion-img padding */
+  margin: 0; /* Keeps it snug in ion-buttons */
+}

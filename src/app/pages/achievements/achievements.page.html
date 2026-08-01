@@ -1,0 +1,36 @@
+<ion-toolbar color="transparent"></ion-toolbar>
+
+<ion-content fullscreen class="ion-padding">
+
+  <div class="ion-text-center ion-margin-bottom">
+    <h1 class="page-title">Achievements</h1>
+  </div>
+
+  <ion-grid>
+    <ion-row>
+      @for (ach of achievements; track ach.id) {
+      <ion-col size="12" size-md="6">
+        <ion-card class="achievement-card">
+
+          <div class="rank-bar"
+               [class.success-bar]="ach.badgeColor === 'success'"
+               [class.warning-bar]="ach.badgeColor === 'warning'"
+               [class.tertiary-bar]="ach.badgeColor === 'tertiary'">
+            {{ ach.rank }}
+          </div>
+
+          <ion-card-header>
+            <ion-card-title>{{ ach.projectTitle }}</ion-card-title>
+          </ion-card-header>
+
+          <ion-card-content>
+            <p>{{ ach.description }}</p>
+          </ion-card-content>
+
+        </ion-card>
+      </ion-col>
+      }
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

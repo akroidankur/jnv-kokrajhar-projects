@@ -1,0 +1,70 @@
+.page-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--ion-color-primary);
+  margin: 0;
+    margin-top: 35px;
+
+}
+
+.page-subtitle {
+  color: var(--ion-color-medium);
+  margin-top: 4px;
+  font-size: 0.9rem;
+}
+
+/* Card */
+.achievement-card {
+  border-radius: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Rank bar */
+.rank-bar {
+  padding: 14px 20px;
+  color: white;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+.success-bar {
+  background: linear-gradient(90deg, #10b981, #34d399);
+}
+
+.warning-bar {
+  background: linear-gradient(90deg, #f59e0b, #fbbf24);
+}
+
+.tertiary-bar {
+  background: linear-gradient(90deg, #6366f1, #818cf8);
+}
+
+/* Content */
+ion-card-header {
+  padding: 16px 20px 8px;
+}
+
+ion-card-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--ion-text-color);
+}
+
+ion-card-content {
+  flex: 1;
+  padding: 0 20px 20px;
+}
+
+ion-card-content p {
+  margin: 0;
+  color: var(--ion-color-medium);
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
